@@ -1,4 +1,4 @@
-SweetAlert
+Nudge SweetAlert
 ==========
 
 An awesome replacement for JavaScript's alert.
@@ -13,24 +13,19 @@ An awesome replacement for JavaScript's alert.
 Usage
 -----
 
-You can install SweetAlert through bower:
+You can install Nudge SweetAlert through bower:
 
 ```bash
-bower install sweetalert
+bower install nudge-sweetalert
 ```
 
 Or through npm:
 
 ```bash
-npm install sweetalert
+npm install nudge-sweetalert
 ```
 
-Alternatively, download the package and reference the JavaScript and CSS files manually:
 
-```html
-<script src="dist/sweetalert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
-```
 **Note:** If you're using an older version than v1.0.0, the files are `lib/sweet-alert.min.js` and `lib/sweet-alert.css`
 
 
@@ -63,9 +58,11 @@ sweetAlert({
   text: "You will not be able to recover this imaginary file!",
   type: "warning",
   showCancelButton: true,
+  showDeclineButton: true,
   confirmButtonColor: "#DD6B55",
   confirmButtonText: "Yes, delete it!",
   closeOnConfirm: false,
+  closeOnDecline: true,
   html: false
 }, function(){
   swal("Deleted!",
