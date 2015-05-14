@@ -1,8 +1,9 @@
 {
-  "name": "sweetalert",
-  "homepage": "http://tristanedwards.me/sweetalert",
+  "name": "nudge-sweetalert",
+  "homepage": "http://nudgeyourself.com",
   "authors": [
-    "Tristan Edwards <tristan.edwards@me.com> (http://tristanedwards.me)"
+    "Tristan Edwards <tristan.edwards@me.com> (http://tristanedwards.me)",
+    "Joe Fatora <joe@nudgeyourself.com> (http://nudgeyourself.com)"
   ],
   "description": "A beautiful replacement for JavaScript's alert.",
   "main": ["lib/sweet-alert.js", "lib/sweet-alert.css"],
@@ -12,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:t4t5/sweetalert.git"
+    "url": "git@github.com:joefatora/sweetalert.git"
   },
   "license": "MIT"
 }
