@@ -1,5 +1,5 @@
 {
-  "name": "sweetalert",
+  "name": "nudge-sweetalert",
   "version": "1.0.0-beta",
   "description": "A beautiful replacement for JavaScript's \"Alert\"",
   "main": "dist/sweetalert.min.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/t4t5/sweetalert"
+    "url": "https://github.com/joefatora/sweetalert"
   },
   "keywords": [
     "sweetalert",
@@ -19,12 +19,12 @@
     "modal",
     "popup"
   ],
-  "author": "Tristan Edwards <tristan.edwards@me.com> (http://tristanedwards.me)",
+  "author": "Tristan Edwards <tristan.edwards@me.com> (http://tristanedwards.me). Modified for Nudge by Joe Fatora.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/t4t5/sweetalert/issues"
+    "url": "https://github.com/joefatora/sweetalert/issues"
   },
-  "homepage": "http://tristanedwards.me/sweetalert",
+  "homepage": "http://nudgeyourself.com",
   "devDependencies": {
     "babelify": "^6.0.2",
     "browserify": "^9.0.8",
