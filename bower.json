@@ -15,6 +15,5 @@
     "type": "git",
     "url": "git@github.com:joefatora/sweetalert.git"
   },
-  "ignore": "dev",
   "license": "MIT"
 }
