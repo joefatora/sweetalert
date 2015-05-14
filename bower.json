@@ -6,7 +6,7 @@
     "Joe Fatora <joe@nudgeyourself.com> (http://nudgeyourself.com)"
   ],
   "description": "A beautiful replacement for JavaScript's alert.",
-  "main": ["lib/sweetalert.min.js", "lib/sweetalert.css"],
+  "main": ["dist/sweetalert.min.js", "dist/sweetalert.css"],
   "keywords": [
     "alert",
     "modal"
