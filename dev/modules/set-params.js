@@ -27,6 +27,7 @@ var setParameters = function(params) {
   var $text = modal.querySelector('p');
   var $cancelBtn = modal.querySelector('button.cancel');
   var $confirmBtn = modal.querySelector('button.confirm');
+  var $declineBtn = modal.querySelector('button.decline');
 
   /*
    * Title
@@ -165,6 +166,16 @@ var setParameters = function(params) {
   }
 
   /*
+   * Show decline button?
+   */
+    modal.setAttribute('data-has-decline-button', params.showDeclineButton);
+    if (params.showDeclineButton) {
+      $declineBtn.style.display = 'inline-block';
+    } else {
+      hide($declineBtn);
+    }
+
+  /*
    * Custom text on cancel/confirm buttons
    */
   if (params.cancelButtonText) {
@@ -186,6 +197,16 @@ var setParameters = function(params) {
   }
 
   /*
+   * Custom color on confirm button
+   */
+  if (params.declineButtonColor) {
+    // Set confirm button to selected background color
+    $declineBtn.style.backgroundColor = params.declineButtonColor;
+    // Set box-shadow to default focused button
+    setFocusStyle($declineBtn, params.declineButtonColor);
+  }
+
+  /*
    * Allow outside click
    */
   modal.setAttribute('data-allow-outside-click', params.allowOutsideClick);
@@ -195,6 +216,13 @@ var setParameters = function(params) {
    */
   var hasDoneFunction = params.doneFunction ? true : false;
   modal.setAttribute('data-has-done-function', hasDoneFunction);
+
+  /*
+   * Callback function
+   */
+  var hasDeclineFunction = (params.declineFunction) ? true : false;
+  modal.setAttribute('data-has-decline-function', hasDeclineFunction);
+
 
   /*
    * Animation

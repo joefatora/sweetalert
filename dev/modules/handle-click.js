@@ -11,9 +11,11 @@ var handleButton = function(event, params, modal) {
   var target = e.target || e.srcElement;
 
   var targetedConfirm = target.className.indexOf('confirm') !== -1;
+  var targetedDecline = target.className.indexOf('decline') !== -1;
   var targetedOverlay = target.className.indexOf('sweet-overlay') !== -1;
   var modalIsVisible  = hasClass(modal, 'visible');
   var doneFunctionExists = (params.doneFunction && modal.getAttribute('data-has-done-function') === 'true');
+  var declineFunctionExists = (params.declineFunction && modal.getAttribute('data-has-decline-function') === 'true');
 
   // Since the user can change the background-color of the confirm button programmatically,
   // we must calculate what the color should be on hover/active
@@ -48,13 +50,21 @@ var handleButton = function(event, params, modal) {
       break;
 
     case 'focus':
+      let $declineButton = modal.querySelector('button.decline');
       let $confirmButton = modal.querySelector('button.confirm');
       let $cancelButton  = modal.querySelector('button.cancel');
 
       if (targetedConfirm) {
         $cancelButton.style.boxShadow = 'none';
-      } else {
+        $declineButton.style.boxShadow = 'none';
+      } 
+      else if (targetedDecline) {
         $confirmButton.style.boxShadow = 'none';
+        $cancelButton.style.boxShadow = 'none';
+      } 
+      else {
+        $confirmButton.style.boxShadow = 'none';
+        $declineButton.style.boxShadow = 'none';
       }
       break;
 
@@ -69,6 +79,8 @@ var handleButton = function(event, params, modal) {
 
       if (targetedConfirm && doneFunctionExists && modalIsVisible) {
         handleConfirm(modal, params);
+      } else if (targetedDecline && declineFunctionExists && modalIsVisible) {
+        handleDecline(modal, params);
       } else if (doneFunctionExists && modalIsVisible || targetedOverlay) {
         handleCancel(modal, params);
       } else if (isDescendant(modal, target) && target.tagName === 'BUTTON') {
@@ -116,9 +128,22 @@ var handleCancel = function(modal, params) {
   }
 };
 
+/*
+ *  User clicked on "Decline"
+ */
+var handleDecline = function(modal, params) {
+  var callbackValue = true;
+
+  params.declineFunction(callbackValue);
+
+  if (params.closeOnDecline) {
+    sweetAlert.close();
+  }
+};
 
 export default {
   handleButton,
   handleConfirm,
-  handleCancel
+  handleCancel,
+  handleDecline
 };
