@@ -117,6 +117,9 @@ sweetAlert = swal = function() {
       // Callback function when clicking on "OK"/"Cancel"
       params.doneFunction = arguments[1] || null;
 
+      // Callback function when clicking on Decline
+      params.declineFunction = arguments[2] || null;
+
       break;
 
     default:
